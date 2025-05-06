@@ -41,5 +41,10 @@ class TestBusFare(unittest.TestCase):
         price = bus_ticket_price(age=30, ride_datetime=ride_datetime, ride_duration=4, is_public_holiday=False)
         self.assertEqual(price, 0)  # Free for short off-peak rides
 
+    def demo(self):
+        ride_datetime = datetime(2025, 5, 6, 10, 0)  # Non-peak weekday
+        price = bus_ticket_price(age=30, ride_datetime=ride_datetime, ride_duration=4, is_public_holiday=False)
+        self.assertEqual(price, 5)  # Free for short off-peak rides
+
 if __name__ == "__main__":
     unittest.main()
